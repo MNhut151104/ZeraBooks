@@ -1,0 +1,455 @@
+.user-order-detail-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 24px 0 60px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.user-order-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 1. Header Card */
+.user-order-detail-header {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 16px 24px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  align-items: center;
+  border: 1px solid #eaeaea;
+  min-height: 60px;
+}
+
+.header-col-back {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-order-detail-header .back-btn {
+  background: transparent;
+  border: none;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.user-order-detail-header .back-btn:hover {
+  color: #7B68EE;
+}
+
+.user-order-detail-header .back-btn i {
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.user-order-detail-header .back-btn span {
+  display: inline-block;
+  line-height: 1;
+}
+
+.header-col-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.code-label {
+  color: #777777;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.code-value {
+  font-weight: 600;
+  color: #222222;
+  font-size: 14px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.header-col-status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* 2. Timeline Stepper Section */
+.status-timeline-section {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 30px 24px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+}
+
+.status-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.active .timeline-icon {
+  background: #27ae60;
+  color: #ffffff;
+}
+
+.timeline-item.current .timeline-icon {
+  background: #7B68EE;
+  box-shadow: 0 0 0 4px rgba(123, 104, 238, 0.2);
+}
+
+.timeline-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #777777;
+  text-align: center;
+}
+
+.timeline-item.active .timeline-label {
+  color: #333333;
+  font-weight: 600;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background: #e0e0e0;
+  z-index: 0;
+}
+
+.timeline-item.active .timeline-line {
+  background: #27ae60;
+}
+
+/* 3. Address & Delivery Info Cards Grid */
+.order-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.info-box-card {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+}
+
+.info-box-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0 0 14px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-box-card h3 i {
+  color: #7B68EE;
+}
+
+.info-field-row {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.info-field-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-field-label {
+  width: 140px;
+  color: #777777;
+  flex-shrink: 0;
+}
+
+.info-field-value {
+  flex: 1;
+  color: #222222;
+  font-weight: 500;
+}
+
+/* 4. Products Table Card */
+.order-items-box-card {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+}
+
+.order-items-box-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.items-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-detail-product-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.order-detail-product-row:last-child {
+  border-bottom: none;
+}
+
+.detail-product-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #e8e8e8;
+  flex-shrink: 0;
+}
+
+.detail-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.detail-product-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  margin: 0 0 4px 0;
+  line-height: 1.35;
+}
+
+.detail-product-author {
+  font-size: 13px;
+  color: #777777;
+}
+
+.detail-product-qty {
+  font-size: 13px;
+  color: #888888;
+  margin-top: 2px;
+}
+
+.detail-product-prices {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.detail-unit-price {
+  font-size: 14px;
+  color: #555555;
+}
+
+.detail-total-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #7B68EE;
+  margin-top: 2px;
+}
+
+/* 5. Summary & Cost Breakdown Card */
+.order-summary-box-card {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+}
+
+.summary-calc-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.summary-calc-row.grand-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: #7B68EE;
+  padding-top: 10px;
+  border-top: 1px solid #eaeaea;
+  margin-bottom: 0;
+}
+
+.summary-calc-row span:last-child {
+  width: 140px;
+  text-align: right;
+}
+
+/* Actions Footer */
+.detail-actions-footer,
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-cancel-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: #ffffff;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-cancel-order i {
+  font-size: 14px;
+}
+
+.btn-cancel-order:hover {
+  background: #fff5f5;
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.btn-reorder,
+.btn-return,
+.btn-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-reorder {
+  background: #7B68EE;
+  color: #ffffff;
+}
+
+.btn-reorder:hover {
+  background: #6a5acd;
+}
+
+.btn-return {
+  background: #ffffff;
+  border: 1px solid #7B68EE;
+  color: #7B68EE;
+}
+
+.btn-return:hover {
+  background: #f5f3ff;
+}
+
+.btn-review {
+  background: #f39c12;
+  color: #ffffff;
+}
+
+.btn-review:hover {
+  background: #e67e22;
+}
+
+.btn-reviewed {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #f5f5f5;
+  color: #888888;
+  border: 1px solid #dddddd;
+  cursor: default;
+}

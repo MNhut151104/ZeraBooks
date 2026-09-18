@@ -1,0 +1,23 @@
+{
+  "cart": {
+    "title": "Giỏ hàng của bạn",
+    "checkout": "Thanh toán",
+    "empty": "Giỏ hàng trống",
+    "quantity": "Số lượng"
+  },
+  "bookDetail": {
+    "author": "Tác giả",
+    "publisher": "Nhà xuất bản",
+    "rating": "đánh giá",
+    "addToCart": "Thêm vào giỏ hàng",
+    "buyNow": "Mua ngay",
+    "description": "Giới thiệu sách",
+    "specifications": "Thông tin chi tiết",
+    "reviews": "Đánh giá",
+    "stock": "Còn sản phẩm",
+    "outOfStock": "Hết hàng",
+    "loading": "Đang tải thông tin sách...",
+    "notFound": "Không tìm thấy sách",
+    "backToList": "Quay lại danh sách"
+  }
+}

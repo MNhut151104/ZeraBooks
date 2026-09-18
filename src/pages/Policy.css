@@ -1,0 +1,132 @@
+/* ZERA BOOKS POLICY PAGE STYLES */
+
+.policy-page {
+  background-color: var(--color-bg-dark, #0f172a);
+  color: #e2e8f0;
+  min-height: calc(100vh - 200px);
+}
+
+.policy-sidebar-card {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #334155 !important;
+}
+
+.policy-sidebar-header {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #f1f5f9;
+  border-bottom: 2px solid var(--color-primary, #60a5fa);
+  padding: 16px 20px;
+}
+
+.policy-nav .nav-link {
+  color: #cbd5e1;
+  padding: 14px 20px;
+  border-radius: 0;
+  border-left: 3px solid transparent;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+.policy-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.policy-nav .nav-link.active {
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.15) 0%, rgba(96, 165, 250, 0) 100%);
+  color: #60a5fa;
+  border-left-color: #60a5fa;
+  font-weight: 600;
+}
+
+.policy-contact-card {
+  background: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155 !important;
+  color: #cbd5e1;
+}
+
+.policy-main-card {
+  background: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155 !important;
+  color: #e2e8f0;
+}
+
+.policy-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+}
+
+.policy-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.policy-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.policy-card:hover {
+  border-color: #475569;
+}
+
+.policy-card h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.policy-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}
+
+.policy-card p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-card ul, .policy-card ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.policy-card li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.note-text {
+  font-size: 13px !important;
+  color: #fbbf24 !important;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .policy-page {
+    padding-top: 20px;
+  }
+}

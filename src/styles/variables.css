@@ -1,0 +1,13 @@
+:root {
+  /* Colors */
+  --color-primary: #60A5FA;
+  --color-primary-dark: #3B82F6;
+  --color-secondary: #A78BFA;
+  --color-danger: #EF4444;
+  --color-background: #F0F4FF;
+  --color-text-main: #334155;
+
+  /* Typography */
+  --font-family-main: 'Segoe UI', Roboto, Helvetica, sans-serif;
+  --font-size-base: 14px;
+}

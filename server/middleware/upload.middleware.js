@@ -1,0 +1,47 @@
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+
+// Đảm bảo thư mục uploads tồn tại
+const uploadDir = path.join(__dirname, '../../public/images/books');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+// Cấu hình storage cho multer
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    // Đặt tên file: bookId-timestamp.ext
+    const bookId = req.params.id || 'new';
+    const timestamp = Date.now();
+    const ext = path.extname(file.originalname);
+    cb(null, `${bookId}-${timestamp}${ext}`);
+  }
+});
+
+// Lọc file - chỉ chấp nhận ảnh
+const fileFilter = (req, file, cb) => {
+  const allowedTypes = /jpeg|jpg|png|gif|webp/;
+  const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
+  const mimetype = allowedTypes.test(file.mimetype);
+
+  if (mimetype && extname) {
+    return cb(null, true);
+  } else {
+    cb(new Error('Chỉ chấp nhận file ảnh (jpeg, jpg, png, gif, webp)!'));
+  }
+};
+
+// Cấu hình multer
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 500 * 1024 // 500KB
+  },
+  fileFilter: fileFilter
+});
+
+module.exports = upload;

@@ -1,0 +1,23 @@
+{
+  "cart": {
+    "title": "Your Cart",
+    "checkout": "Checkout",
+    "empty": "Cart is empty",
+    "quantity": "Quantity"
+  },
+  "bookDetail": {
+    "author": "Author",
+    "publisher": "Publisher",
+    "rating": "reviews",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "description": "Product Description",
+    "specifications": "Specifications",
+    "reviews": "Reviews",
+    "stock": "in stock",
+    "outOfStock": "Out of Stock",
+    "loading": "Loading book details...",
+    "notFound": "Book not found",
+    "backToList": "Back to list"
+  }
+}

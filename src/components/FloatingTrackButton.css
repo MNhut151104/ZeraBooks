@@ -1,0 +1,93 @@
+.floating-track-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.floating-track-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
+.floating-track-button i {
+  font-size: 1.2rem;
+}
+
+.button-text {
+  white-space: nowrap;
+}
+
+/* Pulse effect */
+.floating-track-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  background: rgba(102, 126, 234, 0.3);
+  animation: pulse 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .floating-track-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+
+  .floating-track-button i {
+    font-size: 1rem;
+  }
+
+  .button-text {
+    display: none; /* Chỉ hiển thị icon trên mobile */
+  }
+
+  .floating-track-button {
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-track-button {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}

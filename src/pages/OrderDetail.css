@@ -1,0 +1,653 @@
+/* ==========================================================================
+   ADMIN ORDER DETAIL STYLES - MODERN REBUILD
+   ========================================================================== */
+
+.admin-order-detail-page {
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  padding: 24px 0 60px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+}
+
+.admin-order-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 1. Header Navigation Banner Card */
+.admin-order-header-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 35% 45% 20%;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+}
+
+.admin-order-header-card .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.admin-order-header-card .back-btn {
+  background: transparent;
+  border: none;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.admin-order-header-card .back-btn:hover {
+  color: #4f46e5;
+}
+
+.admin-order-header-card .header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.admin-order-header-card .code-label {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.admin-order-header-card .code-value {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.admin-order-header-card .order-time {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.admin-order-header-card .header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-pill i {
+  font-size: 8px;
+}
+
+.status-pill.status-pending { background: #fff8e7; color: #d97706; border: 1px solid #fef3c7; }
+.status-pill.status-processing { background: #eff6ff; color: #2563eb; border: 1px solid #dbeafe; }
+.status-pill.status-awaitingshipment { background: #fdf4ff; color: #9333ea; border: 1px solid #f5d0fe; }
+.status-pill.status-shipping { background: #f0fdf4; color: #16a34a; border: 1px solid #dcfce7; }
+.status-pill.status-delivered { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.status-pill.status-cancelled { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+/* 2. Stepper Card & Action Toolbar */
+.admin-stepper-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.stepper-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  z-index: 1;
+}
+
+.step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+}
+
+.step-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+  text-align: center;
+}
+
+.step-line {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #e2e8f0;
+  z-index: -1;
+}
+
+.stepper-step.active .step-circle {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #ffffff;
+}
+
+.stepper-step.active .step-label {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.stepper-step.active .step-line {
+  background: #4f46e5;
+}
+
+.stepper-step.current .step-circle {
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+}
+
+/* Action Toolbar */
+.admin-action-toolbar {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.action-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-act {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-act:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-act:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-act.btn-primary { background: #4f46e5; color: #ffffff; }
+.btn-act.btn-secondary { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+.btn-act.btn-success { background: #16a34a; color: #ffffff; }
+.btn-act.btn-danger { background: #ef4444; color: #ffffff; }
+.btn-act.btn-warning { background: #f59e0b; color: #ffffff; }
+
+/* 3. Main 2-Column Grid Layout (68% | 32%) */
+.admin-detail-body-grid {
+  display: grid;
+  grid-template-columns: 68% 30%;
+  gap: 24px;
+}
+
+.admin-main-column, .admin-sidebar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card Container Base */
+.admin-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-card-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-card-header h3 i {
+  color: #4f46e5;
+  font-size: 14px;
+}
+
+.items-count {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Product Table */
+.admin-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.admin-items-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-items-table th {
+  background: #f8fafc;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-items-table td {
+  padding: 14px;
+  font-size: 14px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.item-product-flex {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-thumb {
+  width: 50px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0f172a;
+  line-height: 1.4;
+}
+
+.item-author {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+
+/* Financial Summary Footer Subcard */
+.financial-summary-card {
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 16px 20px;
+  max-width: 380px;
+  margin-left: auto;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #475569;
+}
+
+.fin-row.fin-discount {
+  color: #16a34a;
+}
+
+.fin-row.fin-total {
+  border-top: 1px solid #cbd5e1;
+  padding-top: 10px;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.fin-total .total-val {
+  color: #dc2626;
+  font-size: 18px;
+}
+
+/* Status Log Timeline Node */
+.admin-log-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.admin-log-timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: #e2e8f0;
+}
+
+.log-node {
+  position: relative;
+}
+
+.log-node-dot {
+  position: absolute;
+  left: -15px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4f46e5;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #4f46e5;
+}
+
+.log-node-body {
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.log-node-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.log-transition {
+  color: #0f172a;
+}
+
+.log-time {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.log-reason-box {
+  font-size: 12px;
+  color: #dc2626;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.log-actor {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Sidebar List Info */
+.card-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.info-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.info-item.full-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+}
+
+.info-item .lbl {
+  color: #64748b;
+  font-weight: 500;
+  text-align: left;
+}
+
+.info-item .val {
+  color: #0f172a;
+  text-align: left;
+  word-break: break-word;
+}
+
+.address-val, .note-val {
+  line-height: 1.5;
+  color: #334155;
+  text-align: left;
+}
+
+.note-val {
+  font-style: italic;
+  color: #d97706;
+}
+
+.badge-tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.pay-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.pay-badge.is-paid { background: #dcfce7; color: #15803d; }
+.pay-badge.is-unpaid { background: #fee2e2; color: #b91c1c; }
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.reason-modal-box {
+  background: #ffffff;
+  border-radius: 8px;
+  width: 480px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.modal-box-header {
+  background: #f8fafc;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-box-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-box-header .close-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-box-body {
+  padding: 20px;
+}
+
+.modal-box-body p {
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.modal-box-body textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+.modal-box-body textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.modal-box-footer {
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-modal {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-modal.btn-cancel { background: #f1f5f9; color: #475569; }
+.btn-modal.btn-confirm { background: #4f46e5; color: #ffffff; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .admin-detail-body-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-order-header-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .admin-order-header-card .header-left,
+  .admin-order-header-card .header-center,
+  .admin-order-header-card .header-right {
+    justify-content: center;
+  }
+}
